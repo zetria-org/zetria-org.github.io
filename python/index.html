@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=0" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#fd936c" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://zetria.tw/brand/logo2.png" />
+    <link rel="stylesheet" href="../global.css" />
+    <meta httpEquiv="content-language" content="zh" />
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js
+    "></script>
+
+    <style>
+        .main{
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: calc(100vw - 36px);
+            max-width: calc(500px);
+            margin: 0 auto;
+            padding: 18px;
+        }
+
+        #python-input{
+            height: 250px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            font-family: monospace;
+            line-height: 130%;
+            font-size: 15px;
+        }
+
+        button{
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            width: calc(100%);
+            display: block;
+            padding: 13px 13px;
+        }
+
+        #output-label{
+            margin-top: 20px;
+        }
+
+        #output{
+            min-height: 20px;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <py-script>
+        from io import StringIO
+        from contextlib import redirect_stdout
+
+        def run():
+            inputElem = Element("python-input").element
+            outputElem = Element("output").element
+
+            f = StringIO()
+            with redirect_stdout(f):
+                exec(inputElem.value)
+
+            outputElem.innerHTML = f.getvalue()
+
+    </py-script>
+    
+    <py-config type="json">
+        {
+            "terminal": false
+        }
+    </py-config>
+    
+    <div class="main" id="app-main">
+        <div class="py-repl">
+            <textarea id="python-input"></textarea>
+            <button py-click="run()">
+                執行程式 
+            </button>
+        </div>
+        <h3 id="output-label">執行輸出</h3>
+        <div class="output" id="output">
+    
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

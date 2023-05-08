@@ -1,0 +1,103 @@
+html{
+    width:100%;
+    height:100%
+}
+*{
+    scroll-behavior:smooth;
+    font-family:Arial,'Nato Sans Regular', 'Microsoft Jhenghei';
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,.15);
+    transition: var(--trans);
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --vw:100vw;
+    --bg_height_i:min(7vh, 80px);
+    --standard_font_size:205px;
+    --standard_content_width:50vw;
+    --trans:0.15s;
+    --side_width:300px;
+    --row_length:4;
+    --theme_color:253,147,108;
+    --science:253,147,108;
+    --social:102,196,236;
+    --language:218,97,135;
+    --computing:205,94,244;
+    --content_round_corner:5px;
+    --avatar_size:100%
+}
+::selection{
+    color:#000;
+    background-color:rgba(var(--theme_color),.2)
+}
+body{
+    margin:0;
+    overflow-x:hidden;
+    width:100%;
+    height:100%
+}
+b{
+    font-weight:bold
+}
+h1, h2{
+    margin-block-start:0;
+    margin-inline-end:0;
+    font-weight:300;
+}
+.has_bg{
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.clickable{
+    cursor:pointer;
+    user-select:none;
+    -moz-user-select:none;
+    background-position:center;
+    background-repeat:no-repeat;
+    transition:.15s;
+}
+.popup_layer{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,.2);
+    z-index:30
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+textarea{
+    display: block;
+    outline: none;
+    resize: none;
+    width: calc(100% - 2px - 30px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+}
+textarea:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,.04);
+}
+textarea:focus{
+    width: calc(100% - 4px - 30px);
+    border: 2px solid rgb(var(--theme_color));
+    background-color: white;
+}
+button{
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 17px;
+    border-radius: 8px;
+    padding: 10px 13px;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #666;
+}
