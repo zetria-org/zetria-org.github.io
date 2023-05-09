@@ -13,3 +13,16 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://zetria.tw/brand/logo2.png" />
 <meta httpEquiv="content-language" content="zh" />
 ```
+
+### `apps.json` 規範
+
+```json
+[
+    {
+        "id": "",
+        "name": "",
+        "endpoint": ""
+    },
+    ...
+]
+```

@@ -1,6 +1,7 @@
 [
     {
         "id": "python",
-        "name": "互動式 Python 執行列"
+        "name": "互動式 Python 執行列",
+        "endpoint": "https://zetria-org.github.io/python"
     }
 ]
